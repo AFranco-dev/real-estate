@@ -4,7 +4,7 @@ from odoo import api, fields, models
 
 class HospitalPatient(models.Model):
     _name = 'estate.property'
-    _inherit = []
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'Estate Property'
 
     name = fields.Char(string='Name', required=True)
