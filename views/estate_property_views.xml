@@ -91,6 +91,9 @@
                     name="available" 
                     string="Available" 
                     domain="[('date_availability', '&lt;=', today)]" />
+                <group string="Group By">
+                    <filter name="group_by_postcode" string="Postcode" context="{'group_by': 'postcode'}" />
+                </group>
             </search>
         </field>
     </record>
