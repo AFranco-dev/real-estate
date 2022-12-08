@@ -29,27 +29,42 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                    </div>
                     <group>
                         <group>
-                            <field name="name"/>
-                            <field name="description"/>
                             <field name="postcode"/>
                             <field name="date_availability"/>
-                            <field name="expected_price"/>
-                            <field name="selling_price"/>
-                            <field name="bedrooms"/>
                         </group>
                         <group>
-                            <field name="living_area"/>
-                            <field name="facades"/>
-                            <field name="garage"/>
-                            <field name="garden"/>
-                            <field name="garden_area"/>
-                            <field name="garden_orientation"/>
-                            <field name="state"/>
-                            <field name="active" invisible="1"/>
+                            <field name="expected_price"/>
+                            <field name="selling_price"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page name="description" string="Description">
+                            <form>
+                                <group>
+                                    <group>
+                                        <field name="description"/>
+                                        <field name="bedrooms"/>
+                                        <field name="living_area"/>
+                                        <field name="facades"/>
+                                        <field name="garage"/>
+                                        <field name="garden"/>
+                                        <field name="garden_area"/>
+                                        <field name="garden_orientation"/>
+                                        <field name="state"/>
+                                        <field name="active" invisible="1"/>
+                                    </group>
+                                    <group></group>
+                                </group>
+                            </form>
+                        </page>
+                    </notebook>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" groups="base.group_user"/>
