@@ -81,6 +81,13 @@
                                 </group>
                             </form>
                         </page>
+                        <page name="offers" string="Offers">
+                            <form>
+                                <group>
+                                    <field name="property_offer_ids"/>
+                                </group>
+                            </form>
+                        </page>
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
