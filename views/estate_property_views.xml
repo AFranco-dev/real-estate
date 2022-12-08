@@ -90,7 +90,7 @@
                 <filter 
                     name="available" 
                     string="Available" 
-                    domain="[('date_availability', '&gt;=', today())]" />
+                    domain="[('date_availability', '&gt;=', today)]" />
             </search>
         </field>
     </record>
