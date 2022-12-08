@@ -48,4 +48,4 @@ class EstateProperty(models.Model):
 
     property_tag_ids = fields.Many2many('estate.property.tag', string='Tags')
 
-    property_offer_ids = fields.One2many('estate.property.offer', 'property_id', string='Offers')
+    property_offer_ids = fields.One2many('estate.property.offer', 'property_id', string='Offers', default=lambda self: self.env['estate.property'])
