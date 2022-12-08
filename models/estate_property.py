@@ -3,7 +3,7 @@ from odoo import api, fields, models
 from odoo.tools import date_utils
 
 
-class HospitalPatient(models.Model):
+class EstateProperty(models.Model):
     _name = 'estate.property'
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'Estate Property'
