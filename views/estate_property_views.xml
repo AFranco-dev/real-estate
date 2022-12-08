@@ -46,7 +46,8 @@
                             <field name="garden"/>
                             <field name="garden_area"/>
                             <field name="garden_orientation"/>
-                            <field name="active"/>
+                            <field name="state"/>
+                            <field name="active" invisible="1"/>
                         </group>
                     </group>
                 </sheet>
