@@ -84,7 +84,7 @@
                         <page name="offers" string="Offers">
                             <form>
                                 <group>
-                                    <field name="property_offer_ids"/>
+                                    <field name="property_offer_ids" widget="many2many_tags"/>
                                 </group>
                             </form>
                         </page>
