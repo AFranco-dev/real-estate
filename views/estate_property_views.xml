@@ -82,13 +82,13 @@
                             </form>
                         </page>
                         <page name="offers" string="Offers">
-                            <form>
-                                <group>
-                                    <field name="property_offer_ids.price"/>
-                                    <field name="property_offer_ids.status"/>
-                                    <field name="property_offer_ids.partner_id"/>
-                                </group>
-                            </form>
+                            <field name="property_offer_ids">
+                                <tree string="Offers Details">
+                                    <field name="price" />
+                                    <field name="status" />
+                                    <field name="partner_id" />
+                                </tree>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>
