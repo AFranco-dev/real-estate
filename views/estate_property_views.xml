@@ -22,6 +22,7 @@
                 <field name="estate_property_type_id"/>
                 <field name="salesperson_id"/>
                 <field name="buyer_id"/>
+                <field name="property_tag_ids"/>
             </tree>
         </field>
     </record>
@@ -74,6 +75,7 @@
                                     <group>
                                         <field name="salesperson_id"/>
                                         <field name="buyer_id"/>
+                                        <field name="property_tag_ids"/>
                                     </group>
                                     <group></group>
                                 </group>
