@@ -28,3 +28,15 @@ class HospitalPatient(models.Model):
         selection=[('North', 'north'), ('South', 'south'), ('Easth', 'easth'), ('West', 'west')],
         help='This is the orientation of the garden')
     active = fields.Boolean(string='Active', default=True)
+    state = fields.Selection(
+        string='State Of Property', 
+        selection=[
+            ('New', 'new'), 
+            ('Offer Recieved', 'offer recieved'), 
+            ('Offer Accepted', 'offer accepted'), 
+            ('Sold', 'sold'), 
+            ('Canceled', 'canceled')],
+        help='Select the state in wich the property is.',
+        required=True, 
+        copy=False, 
+        default='new')
