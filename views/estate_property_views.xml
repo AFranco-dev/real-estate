@@ -78,7 +78,7 @@
     
     <record id="estate_property_view_search" model="ir.ui.view">
         <field name="name">estate.property.view.search</field>
-        <field name="model"estate.property</field>
+        <field name="model">estate.property</field>
         <field name="arch" type="xml">
             <search string="">
                 <field name="name" />
