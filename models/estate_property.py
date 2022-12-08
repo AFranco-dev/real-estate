@@ -41,4 +41,4 @@ class EstateProperty(models.Model):
         copy=False, 
         default='new')
 
-    estate_property_type = fields.Many2one(comodel_name="estate.property.type", string="Property Type")
+    estate_property_type_id = fields.Many2one(comodel_name="estate.property.type", string="Property Type")
