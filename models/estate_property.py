@@ -11,7 +11,10 @@ class HospitalPatient(models.Model):
     name = fields.Char(string='Name', required=True)
     description = fields.Text(string='Description')
     postcode = fields.Char(string='Postal Code')
-    date_availability = fields.Date(string='Date Availability', copy=False, default=lambda self: date_utils.add(fields.Date.today(), months=3))
+    date_availability = fields.Date(
+        string='Date Availability', 
+        copy=False, 
+        default=lambda self: date_utils.add(fields.Date.today(), months=3))
     expected_price = fields.Float(string='Expected Price')
     selling_price = fields.Float(string='Selling Price', required=True, readonly=True, copy=False)
     bedrooms = fields.Integer(string='# Of Bedrooms', default=3)
@@ -24,3 +27,4 @@ class HospitalPatient(models.Model):
         string='Orientation', 
         selection=[('North', 'north'), ('South', 'south'), ('Easth', 'easth'), ('West', 'west')],
         help='This is the orientation of the garden')
+    active = fields.Boolean(string='Active', default=True, hidden=True)
