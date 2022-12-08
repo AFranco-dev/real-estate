@@ -25,17 +25,17 @@ class HospitalPatient(models.Model):
     garden_area = fields.Integer(string='# Of Garden Areas')
     garden_orientation = fields.Selection(
         string='Orientation', 
-        selection=[('North', 'north'), ('South', 'south'), ('Easth', 'easth'), ('West', 'west')],
+        selection=[('north', 'North'), ('south', 'South'), ('easth', 'Easth'), ('west', 'West')],
         help='This is the orientation of the garden')
     active = fields.Boolean(string='Active', default=True)
     state = fields.Selection(
         string='State Of Property', 
         selection=[
-            ('New', 'new'), 
-            ('Offer Recieved', 'offer recieved'), 
-            ('Offer Accepted', 'offer accepted'), 
-            ('Sold', 'sold'), 
-            ('Canceled', 'canceled')],
+            ('new', 'New'), 
+            ('offer recieved', 'Offer Recieved'), 
+            ('offer accepted', 'Offer Accepted'), 
+            ('sold', 'Sold'), 
+            ('canceled', 'Canceled')],
         help='Select the state in wich the property is.',
         required=True, 
         copy=False, 
