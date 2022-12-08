@@ -20,6 +20,8 @@
                 <field name="garden_area"/>
                 <field name="garden_orientation"/>
                 <field name="estate_property_type_id"/>
+                <field name="salesperson_id"/>
+                <field name="buyer_id"/>
             </tree>
         </field>
     </record>

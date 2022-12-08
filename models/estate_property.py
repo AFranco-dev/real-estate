@@ -44,4 +44,4 @@ class EstateProperty(models.Model):
     estate_property_type_id = fields.Many2one(comodel_name="estate.property.type", string="Property Type")
 
     salesperson_id = fields.Many2one('res.users', string='Salesperson', default=lambda self: self.env.user)
-    buyer_id = fields.Many2one('res.users', string='Buyer')
+    buyer_id = fields.Many2one('res.partner', string='Buyer')
