@@ -15,8 +15,8 @@ class HospitalPatient(models.Model):
         string='Date Availability', 
         copy=False, 
         default=lambda self: date_utils.add(fields.Date.today(), months=3))
-    expected_price = fields.Float(string='Expected Price')
-    selling_price = fields.Float(string='Selling Price', required=True, readonly=True, copy=False)
+    expected_price = fields.Float(string='Expected Price', readonly=True)
+    selling_price = fields.Float(string='Selling Price', required=True, copy=False)
     bedrooms = fields.Integer(string='# Of Bedrooms', default=3)
     living_area = fields.Integer(string='# Of Living Areas')
     facades = fields.Integer(string='# Of Facades')
