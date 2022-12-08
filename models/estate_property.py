@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models
+from odoo.tools import date_utils
 
 
 class HospitalPatient(models.Model):
@@ -10,10 +11,10 @@ class HospitalPatient(models.Model):
     name = fields.Char(string='Name', required=True)
     description = fields.Text(string='Description')
     postcode = fields.Char(string='Postal Code')
-    date_availability = fields.Date(string='Date Availability')
+    date_availability = fields.Date(string='Date Availability', copy=False, default=lambda self: date_utils.add(today, months=3))
     expected_price = fields.Float(string='Expected Price')
-    selling_price = fields.Float(string='Selling Price', required=True)
-    bedrooms = fields.Integer(string='# Of Bedrooms')
+    selling_price = fields.Float(string='Selling Price', required=True, readonly=True, copy=False)
+    bedrooms = fields.Integer(string='# Of Bedrooms', default=3)
     living_area = fields.Integer(string='# Of Living Areas')
     facades = fields.Integer(string='# Of Facades')
     garage = fields.Boolean(string='Has Garage')
