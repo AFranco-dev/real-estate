@@ -9,7 +9,6 @@
                 <field name="price"/>
                 <field name="status"/>
                 <field name="partner_id"/>
-                <field name="property_id"/>
             </tree>
         </field>
     </record>
@@ -20,10 +19,11 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <field name="price"/>
-                    <field name="status"/>
-                    <field name="partner_id"/>
-                    <field name="property_id"/>
+                    <group name="offer_details" string="Offer Details">
+                        <field name="price"/>
+                        <field name="status"/>
+                        <field name="partner_id"/>
+                    </group>
                 </sheet>
             </form>
         </field>
