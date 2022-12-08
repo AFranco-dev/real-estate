@@ -90,8 +90,7 @@
                 <filter 
                     name="available" 
                     string="Available" 
-                    domain="[('date_availability', '&gt;=', (today()))]" 
-                    context="{'group_by': 'field_name'}" />
+                    domain="[('date_availability', '&gt;=', (today()))]" />
             </search>
         </field>
     </record>
