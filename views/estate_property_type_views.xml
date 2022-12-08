@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- tree view -->
-    <record id="estate_property_tree_view" model="ir.ui.view">
+    <record id="estate_property_type_tree_view" model="ir.ui.view">
         <field name="name">estate.property.type.view.tree</field>
         <field name="model">estate.property.type</field>
         <field name="arch" type="xml">
@@ -11,7 +11,7 @@
         </field>
     </record>
     <!-- form view -->
-    <record id="estate_property_form_view" model="ir.ui.view">
+    <record id="estate_property_type_form_view" model="ir.ui.view">
         <field name="name">estate.property.type.view.form</field>
         <field name="model">estate.property.type</field>
         <field name="arch" type="xml">
@@ -33,9 +33,9 @@
     </record>
     <!-- SEARCH VIEW -->
     
-    <record id="estate_property_view_search" model="ir.ui.view">
-        <field name="name">estate.property.view.search</field>
-        <field name="model">estate.property</field>
+    <record id="estate_property_type_view_search" model="ir.ui.view">
+        <field name="name">estate.property.type.view.search</field>
+        <field name="model">estate.property.type</field>
         <field name="arch" type="xml">
             <search string="">
                 <field name="name" />
