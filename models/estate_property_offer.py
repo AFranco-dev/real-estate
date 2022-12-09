@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models
+from odoo import api, fields, models, exceptions
 from odoo.tools import date_utils
 from datetime import date
 
@@ -23,6 +23,15 @@ class EstatePropertyOffer(models.Model):
     date_deadline = fields.Date(string="Offer Deadline", compute="_compute_deadline", inverse="_inverse_deadline")
 
     property_id = fields.Many2one('estate.property', required=True)
+
+    def accept_offer(self):
+        if self.property_id.check_offer_accepted():
+            exceptions.UserError("There is an accepted offer already!")
+        else:
+            self.status = 'accepted'
+    
+    def reject_offer(self):
+        return True
 
     @api.depends('validity')
     def _compute_deadline(self):

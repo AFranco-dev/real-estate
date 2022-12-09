@@ -59,11 +59,11 @@ class EstateProperty(models.Model):
     def property_canceled(self):
         return True
 
-    def accept_offer(self):
-        return True
-    
-    def reject_offer(self):
-        return True
+    def check_offer_accepted(self):
+        for offer in self.property_offer_ids:
+            if offer.status == 'accepted':
+                return True
+        return False
 
     @api.depends('garden_area', 'living_area')
     def _total_area(self):
