@@ -88,6 +88,11 @@
                                     <field name="status" />
                                     <field name="partner_id" />
                                 </tree>
+                                <form>
+                                    <field name="price" />
+                                    <field name="status" />
+                                    <field name="partner_id" />
+                                </form>
                             </field>
                         </page>
                     </notebook>
