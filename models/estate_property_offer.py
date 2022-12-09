@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models
 from odoo.tools import date_utils
+from datetime import date
 
 
 class EstatePropertyOffer(models.Model):
@@ -23,8 +24,8 @@ class EstatePropertyOffer(models.Model):
     @api.depends('validity')
     def _compute_deadline(self):
         for rec in self:
-            rec.date_deadline = date_utils.add(fields.Date.today(), days = rec.validity)
+            rec.date_deadline = date_utils.add(date.today(), days = rec.validity)
 
     def _inverse_deadline(self):
         for rec in self:
-            rec.validity = date_utils.subtract(rec.date_deadline, fields.Date.today()).day
+            rec.validity = (rec.date_deadline - date.today()).days
