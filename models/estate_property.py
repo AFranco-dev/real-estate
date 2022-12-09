@@ -53,6 +53,12 @@ class EstateProperty(models.Model):
 
     property_offer_ids = fields.One2many('estate.property.offer', 'property_id', string='Offers')
 
+    def property_sold(self):
+        return True
+
+    def property_canceled(self):
+        return True
+
     @api.depends('garden_area', 'living_area')
     def _total_area(self):
         for rec in self:
