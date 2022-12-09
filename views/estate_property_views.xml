@@ -41,11 +41,17 @@
                     </div>
                     <group>
                         <group>
+                            <field name="estate_property_type_id"/>
                             <field name="postcode"/>
                             <field name="date_availability"/>
                         </group>
                         <group>
                             <field name="expected_price"/>
+                            <field name="best_offer">
+                                <tree>
+                                    <field name="price" />
+                                </tree>
+                            </field>
                             <field name="selling_price"/>
                         </group>
                     </group>
@@ -63,11 +69,7 @@
                                         <field name="garden_area" string="Garden Area (sqm)" />
                                         <field name="garden_orientation"/>
                                         <field name="state"/>
-                                        <field name="estate_property_type_id"/>
                                         <field name="total_area" />
-                                        <field name="best_offer">
-                                            <field name="price" />
-                                        </field>
                                         <field name="active" invisible="1"/>
                                     </group>
                                     <group></group>
