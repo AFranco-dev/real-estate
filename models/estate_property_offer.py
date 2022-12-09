@@ -21,7 +21,7 @@ class EstatePropertyOffer(models.Model):
 
     property_id = fields.Many2one('estate.property', required=True)
 
-    @api.depends('validity')
+    @api.depends('validity', 'date_deadline')
     def _compute_deadline(self):
         for rec in self:
             rec.date_deadline = date_utils.add(date.today(), days = rec.validity)
