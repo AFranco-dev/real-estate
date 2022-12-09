@@ -31,7 +31,7 @@ class EstatePropertyOffer(models.Model):
             self.status = 'accepted'
     
     def reject_offer(self):
-        return True
+        self.status = 'refused'
 
     @api.depends('validity')
     def _compute_deadline(self):
