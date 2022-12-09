@@ -104,11 +104,11 @@
                                     <field name="validity" />
                                     <button 
                                         name="accept_offer" 
-                                        icon ="oi-checkmark"
+                                        icon="oi-checkmark"
                                         type="object" />
                                     <button 
                                         name="reject_offer" 
-                                        icon ="oi-close"
+                                        icon="oi-close"
                                         type="object" />
                                 </tree>
                                 <form>

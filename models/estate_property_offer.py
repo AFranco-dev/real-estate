@@ -24,6 +24,12 @@ class EstatePropertyOffer(models.Model):
 
     property_id = fields.Many2one('estate.property', required=True)
 
+    def accept_offer(self):
+        return True
+    
+    def reject_offer(self):
+        return True
+
     @api.depends('validity')
     def _compute_deadline(self):
         for rec in self:

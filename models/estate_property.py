@@ -59,12 +59,6 @@ class EstateProperty(models.Model):
     def property_canceled(self):
         return True
 
-    def accept_offer(self):
-        return True
-    
-    def reject_offer(self):
-        return True
-
     @api.depends('garden_area', 'living_area')
     def _total_area(self):
         for rec in self:
