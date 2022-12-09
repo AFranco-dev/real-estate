@@ -61,7 +61,10 @@ class EstateProperty(models.Model):
     @api.depends('property_offer_ids.price')
     def _best_offer(self):
         for rec in self:
-            rec.best_offer = max(offer.price for offer in rec.property_offer_ids)
+            if not rec.property_offer_ids:
+                rec.best_offer = 0
+            else:
+                rec.best_offer = max(offer.price for offer in rec.property_offer_ids)
 
     @api.onchange('garden')
     def _onchange_garden(self):
