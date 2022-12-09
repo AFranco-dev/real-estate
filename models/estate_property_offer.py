@@ -30,11 +30,11 @@ class EstatePropertyOffer(models.Model):
             if not rec.create_date:
                 rec.date_deadline = date_utils.add(date.today(), days = rec.validity)
             else:                
-                rec.date_deadline = date_utils.add(date.to_date(rec.create_date), days = rec.validity)
+                rec.date_deadline = date_utils.add(date_utils.to_date(rec.create_date), days = rec.validity)
 
     def _inverse_deadline(self):
         for rec in self:
             if not rec.create_date:
                 rec.validity = (rec.date_deadline - date.today()).days
             else:
-                rec.validity = (rec.date_deadline - date.to_date(rec.create_date)).days
+                rec.validity = (rec.date_deadline - date_utils.to_date(rec.create_date)).days
