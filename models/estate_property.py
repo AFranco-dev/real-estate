@@ -58,7 +58,7 @@ class EstateProperty(models.Model):
         for rec in self:
             rec.total_area = rec.living_area + rec.garden_area
 
-    @api.depends('property_offer_ids')
+    @api.depends('property_offer_ids.price')
     def _best_offer(self):
         for rec in self:
             rec.best_offer = max(rec.property_offer_ids).price
