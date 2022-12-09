@@ -62,3 +62,12 @@ class EstateProperty(models.Model):
     def _best_offer(self):
         for rec in self:
             rec.best_offer = max(offer.price for offer in rec.property_offer_ids)
+
+    @api.onchange('garden')
+    def _onchange_garden(self):
+        if self.garden:
+            self.garden_area = 10
+            self.garden_orientation = 'north'
+        else:
+            self.garden_area = None
+            self.garden_orientation = None
