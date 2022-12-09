@@ -39,7 +39,9 @@ class EstateProperty(models.Model):
         required=True, 
         copy=False, 
         default='new')
+
     total_area = fields.Integer(string="Total Area (sqm)", compute='_total_area')
+    best_offer = fields.Float(string="Best Offer", compute='_best_offer')
 
     active = fields.Boolean(string='Active', default=True)
 
@@ -55,3 +57,8 @@ class EstateProperty(models.Model):
     def _total_area(self):
         for rec in self:
             rec.total_area = rec.living_area + rec.garden_area
+
+    @api.depends('property_offer_ids')
+    def _best_offer(self):
+        for rec in self:
+            rec.best_offer = max(rec.property_offer_ids)
