@@ -27,7 +27,6 @@ class EstateProperty(models.Model):
         string='Orientation', 
         selection=[('north', 'North'), ('south', 'South'), ('easth', 'Easth'), ('west', 'West')],
         help='This is the orientation of the garden')
-    active = fields.Boolean(string='Active', default=True)
     state = fields.Selection(
         string='State Of Property', 
         selection=[
@@ -40,12 +39,19 @@ class EstateProperty(models.Model):
         required=True, 
         copy=False, 
         default='new')
+    total_area = fields.Integer(string="Total Area (sqm)", compute='_total_area')
+
+    active = fields.Boolean(string='Active', default=True)
 
     estate_property_type_id = fields.Many2one(comodel_name="estate.property.type", string="Property Type")
-
     salesperson_id = fields.Many2one('res.users', string='Salesperson', default=lambda self: self.env.user)
     buyer_id = fields.Many2one('res.partner', string='Buyer')
 
     property_tag_ids = fields.Many2many('estate.property.tag', string='Tags')
 
     property_offer_ids = fields.One2many('estate.property.offer', 'property_id', string='Offers')
+
+    @api.depends(garden_area, living_area)
+    def _total_area(self):
+        for rec in self:
+            rec._total_area = rec.living_area + rec.garden_area

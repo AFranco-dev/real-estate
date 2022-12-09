@@ -23,6 +23,7 @@
                 <field name="salesperson_id"/>
                 <field name="buyer_id"/>
                 <field name="property_tag_ids"/>
+                <field name="_total_area" />
             </tree>
         </field>
     </record>
@@ -55,14 +56,15 @@
                                     <group>
                                         <field name="description"/>
                                         <field name="bedrooms"/>
-                                        <field name="living_area"/>
+                                        <field name="living_area" string="Living Area (sqm)" />
                                         <field name="facades"/>
                                         <field name="garage"/>
                                         <field name="garden"/>
-                                        <field name="garden_area"/>
+                                        <field name="garden_area" string="Garden Area (sqm)" />
                                         <field name="garden_orientation"/>
                                         <field name="state"/>
                                         <field name="estate_property_type_id"/>
+                                        <field name="_total_area" />
                                         <field name="active" invisible="1"/>
                                     </group>
                                     <group></group>
