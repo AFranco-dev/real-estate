@@ -61,4 +61,4 @@ class EstateProperty(models.Model):
     @api.depends('property_offer_ids.price')
     def _best_offer(self):
         for rec in self:
-            rec.best_offer = max(rec.property_offer_ids).price
+            rec.best_offer = max(offer.price for offer in rec.property_offer_ids)
