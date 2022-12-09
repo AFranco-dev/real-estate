@@ -91,7 +91,7 @@
                                     <field name="status" />
                                     <field name="partner_id" />
                                     <field name="date_deadline" />
-                                    <field name="property_id" />
+                                    <field name="validity" />
                                 </tree>
                                 <form>
                                     <group>
@@ -99,7 +99,7 @@
                                         <field name="status" />
                                         <field name="partner_id" />
                                         <field name="date_deadline" />
-                                        <field name="property_id" />
+                                        <field name="validity" />
                                     </group>
                                 </form>
                             </field>
