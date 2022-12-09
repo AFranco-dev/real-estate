@@ -26,7 +26,7 @@ class EstatePropertyOffer(models.Model):
 
     def accept_offer(self):
         if self.property_id.check_offer_accepted():
-            exceptions.UserError("There is an accepted offer already!")
+            raise exceptions.UserError("There is an accepted offer already!")
         else:
             self.status = 'accepted'
     
