@@ -34,8 +34,14 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="property_sold" type="object" class="oe_highlight" string="SOLD" />
-                    <button name="property_canceled" type="object" class="oe_highlight" string="CANCEL" />
+                    <button 
+                        name="property_sold" 
+                        string="SOLD" 
+                        type="object" /> 
+                    <button 
+                        name="property_canceled" 
+                        string="CANCEL"
+                        type="object" /> 
                 </header>
                 <sheet>
                     <div class="oe_title">
