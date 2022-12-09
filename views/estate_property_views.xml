@@ -103,12 +103,14 @@
                                     <field name="date_deadline" />
                                     <field name="validity" />
                                     <button 
-                                        name="accept_offer" 
-                                        icon="oi-checkmark"
+                                        name="accept_offer"
+                                        string="Accept Order" 
+                                        icon="fa-check"
                                         type="object" />
                                     <button 
                                         name="reject_offer" 
-                                        icon="oi-close"
+                                        string="Reject Order"
+                                        icon="fa-xmark"
                                         type="object" />
                                 </tree>
                                 <form>
