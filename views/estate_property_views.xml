@@ -103,11 +103,11 @@
                                     <field name="date_deadline" />
                                     <field name="validity" />
                                     <button 
-                                        name="estate_property.accept_offer" 
+                                        name="accept_offer" 
                                         icon="fa-check"
                                         type="object" />
                                     <button 
-                                        name="estate_property.reject_offer" 
+                                        name="reject_offer" 
                                         icon="fa-times"
                                         type="object" />
                                 </tree>
