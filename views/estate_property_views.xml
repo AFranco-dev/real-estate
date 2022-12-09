@@ -23,7 +23,7 @@
                 <field name="salesperson_id"/>
                 <field name="buyer_id"/>
                 <field name="property_tag_ids"/>
-                <field name="_total_area" />
+                <field name="total_area" />
             </tree>
         </field>
     </record>
@@ -64,7 +64,7 @@
                                         <field name="garden_orientation"/>
                                         <field name="state"/>
                                         <field name="estate_property_type_id"/>
-                                        <field name="_total_area" />
+                                        <field name="total_area" />
                                         <field name="active" invisible="1"/>
                                     </group>
                                     <group></group>
