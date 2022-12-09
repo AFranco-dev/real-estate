@@ -9,7 +9,7 @@ class EstatePropertyOffer(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'Property Offer'
     _columns={
-        'create_date' : fields.Datetime('Creation Date', readonly=True)
+        'create_date' : fields.Date('Creation Date', readonly=True)
     }
 
     price = fields.Float(string="Amount", required=True)
