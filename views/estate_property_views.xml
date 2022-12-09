@@ -89,9 +89,11 @@
                                     <field name="partner_id" />
                                 </tree>
                                 <form>
-                                    <field name="price" />
-                                    <field name="status" />
-                                    <field name="partner_id" />
+                                    <group>
+                                        <field name="price" />
+                                        <field name="status" />
+                                        <field name="partner_id" />
+                                    </group>
                                 </form>
                             </field>
                         </page>
