@@ -9,7 +9,7 @@ class EstatePropertyOffer(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'Property Offer'
     _columns={
-        'create_date' : fields.Date('Creation Date', readonly=True)
+        'create_date' : fields.Datetime('Creation Date', readonly=True)
     }
 
     price = fields.Float(string="Amount", required=True)
@@ -30,11 +30,11 @@ class EstatePropertyOffer(models.Model):
             if not rec.create_date:
                 rec.date_deadline = date_utils.add(date.today(), days = rec.validity)
             else:                
-                rec.date_deadline = date_utils.add(rec.create_date, days = rec.validity)
+                rec.date_deadline = date_utils.add(date.to_date(rec.create_date), days = rec.validity)
 
     def _inverse_deadline(self):
         for rec in self:
             if not rec.create_date:
                 rec.validity = (rec.date_deadline - date.today()).days
             else:
-                rec.validity = (rec.date_deadline - rec.create_date).days
+                rec.validity = (rec.date_deadline - date.to_date(rec.create_date)).days
