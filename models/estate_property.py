@@ -51,7 +51,7 @@ class EstateProperty(models.Model):
 
     property_offer_ids = fields.One2many('estate.property.offer', 'property_id', string='Offers')
 
-    @api.depends(garden_area, living_area)
+    @api.depends('garden_area', 'living_area')
     def _total_area(self):
         for rec in self:
             rec._total_area = rec.living_area + rec.garden_area
