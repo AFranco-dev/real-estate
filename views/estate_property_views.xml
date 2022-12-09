@@ -47,11 +47,7 @@
                         </group>
                         <group>
                             <field name="expected_price"/>
-                            <field name="best_offer">
-                                <tree>
-                                    <field name="price" />
-                                </tree>
-                            </field>
+                            <field name="best_offer" />
                             <field name="selling_price"/>
                         </group>
                     </group>
