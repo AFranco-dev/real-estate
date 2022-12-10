@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models, exceptions
 from odoo.tools import date_utils
+from odoo.tools import float_utils
 
 
 class EstateProperty(models.Model):
@@ -41,7 +42,7 @@ class EstateProperty(models.Model):
         default='new')
     
     _sql_constraints = [
-        ('check_selling_price', 'CHECK(selling_price > 0)',
+        ('check_selling_price', 'CHECK(selling_price >= 0)',
         'The selling price must be higher than zero.'),
         ('check_expected_price', 'CHECK(expected_price > 0)',
         'The expected price must be higher than zero.')
@@ -88,6 +89,7 @@ class EstateProperty(models.Model):
         for rec in self:
             if not rec.property_offer_ids:
                 rec.best_offer = 0
+                rec.selling_price = 0
             else:
                 rec.best_offer = max(offer.price for offer in rec.property_offer_ids)
 
@@ -99,3 +101,11 @@ class EstateProperty(models.Model):
         else:
             self.garden_area = None
             self.garden_orientation = None
+    
+    @api.constrains('selling_price', 'expected_price')
+    def _check_selling_price(self):
+        for rec in self:
+            for offer in rec.property_offer_ids:
+                if (offer.status == "accepted") and \
+                    (float_utils.float_compare(offer.price, rec.expected_price*0.9, 2, 2) == -1):
+                    raise exceptions.ValidationError("The accepted offer price is lower than 90%!")
