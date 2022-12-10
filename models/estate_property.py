@@ -107,5 +107,5 @@ class EstateProperty(models.Model):
         for rec in self:
             for offer in rec.property_offer_ids:
                 if (offer.status == "accepted") and \
-                    (float_utils.float_compare(offer.price, rec.expected_price*0.9, 2, 2) == -1):
+                    (float_utils.float_compare(offer.price, rec.expected_price*0.9, precision_rounding=0.01) == -1):
                     raise exceptions.ValidationError("The accepted offer price is lower than 90%!")
