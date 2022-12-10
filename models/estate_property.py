@@ -56,10 +56,14 @@ class EstateProperty(models.Model):
     def property_sold(self):
         if self.state == "canceled":
             raise exceptions.UserError("The house is already canceled!")
+        else:
+            self.state = "sold"
 
     def property_canceled(self):
         if self.state == "sold":
             raise exceptions.UserError("The house is already sold!")
+        else:
+            self.state = "canceled"
 
     def check_offer_accepted(self):
         for offer in self.property_offer_ids:
