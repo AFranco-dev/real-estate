@@ -29,6 +29,8 @@ class EstatePropertyOffer(models.Model):
             raise exceptions.UserError("There is an accepted offer already!")
         else:
             self.status = 'accepted'
+            self.property_id.buyer_id = self.partner_id
+            self.property_id.selling_price = self.price
     
     def reject_offer(self):
         self.status = 'refused'
