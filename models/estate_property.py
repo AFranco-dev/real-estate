@@ -39,11 +39,16 @@ class EstateProperty(models.Model):
         required=True, 
         copy=False, 
         default='new')
+    
+    _sql_constraints = [
+        ('check_selling_price', 'CHECK(selling_price > 0)',
+        'The selling price must be higher than zero.'),
+        ('check_expected_price', 'CHECK(expected_price > 0)',
+        'The expected price must be higher than zero.')
+    ]
 
     total_area = fields.Integer(string="Total Area (sqm)", compute='_total_area')
     best_offer = fields.Float(string="Best Offer", compute='_best_offer')
-
-    active = fields.Boolean(string='Active', default=True)
 
     estate_property_type_id = fields.Many2one(comodel_name="estate.property.type", string="Property Type")
     salesperson_id = fields.Many2one('res.users', string='Salesperson', default=lambda self: self.env.user)
@@ -52,6 +57,8 @@ class EstateProperty(models.Model):
     property_tag_ids = fields.Many2many('estate.property.tag', string='Tags')
 
     property_offer_ids = fields.One2many('estate.property.offer', 'property_id', string='Offers')
+
+    active = fields.Boolean(string='Active', default=True)
 
     def property_sold(self):
         if self.state == "canceled":

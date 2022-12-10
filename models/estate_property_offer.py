@@ -24,6 +24,11 @@ class EstatePropertyOffer(models.Model):
 
     property_id = fields.Many2one('estate.property', required=True)
 
+    _sql_constraints = [
+        ('check_offer_price', 'CHECK(price > 0)',
+        'The offer price must be higher than zero.')
+    ]
+
     def accept_offer(self):
         if self.property_id.check_offer_accepted():
             raise exceptions.UserError("There is an accepted offer already!")
