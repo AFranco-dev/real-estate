@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models
+from odoo import api, fields, models, exceptions
 from odoo.tools import date_utils
 
 
@@ -54,10 +54,12 @@ class EstateProperty(models.Model):
     property_offer_ids = fields.One2many('estate.property.offer', 'property_id', string='Offers')
 
     def property_sold(self):
-        return True
+        if self.state == "canceled":
+            raise exceptions.UserError("The house is already canceled!")
 
     def property_canceled(self):
-        return True
+        if self.state == "sold":
+            raise exceptions.UserError("The house is already sold!")
 
     def check_offer_accepted(self):
         for offer in self.property_offer_ids:
