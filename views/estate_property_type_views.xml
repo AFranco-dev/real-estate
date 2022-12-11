@@ -22,6 +22,13 @@
                             <field name="name" />
                         </h1>
                     </div>
+                    <field name="estate_property_ids">
+                        <tree>
+                            <field name="name"/>
+                            <field name="expected_price"/>
+                            <field name="status"/>
+                        </tree>
+                    </field>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" groups="base.group_user"/>
