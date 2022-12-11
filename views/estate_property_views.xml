@@ -42,6 +42,10 @@
                         name="property_canceled" 
                         string="CANCEL"
                         type="object" /> 
+                    <field 
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="new, offer recieved, offer accepted, sold" />
                 </header>
                 <sheet>
                     <div class="oe_title">
@@ -51,7 +55,6 @@
                     </div>
                     <group>
                         <group>
-                            <field name="state"/>
                             <field name="estate_property_type_id"/>
                             <field name="postcode"/>
                             <field name="date_availability"/>
