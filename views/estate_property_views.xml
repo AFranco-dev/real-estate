@@ -58,7 +58,8 @@
                             <field name="estate_property_type_id" widget="many2one" 
                                 options="{
                                     'can_create': False, 
-                                    'can_write' : False}" />
+                                    'can_write' : False}, 
+                                    'no_create' : True" />
                             <field name="postcode"/>
                             <field name="date_availability"/>
                         </group>
