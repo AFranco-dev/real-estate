@@ -96,9 +96,9 @@
                         </page>
                         <page name="offers" string="Offers">
                             <field name="property_offer_ids" attrs="{'readonly': ['|','|',('state', '=', 'canceled'), ('state', '=', 'offer accepted'), ('state', '=', 'sold')]}" >
-                                <tree string="Offers Details" editable="top">
+                                <tree string="Offers Details" editable="top" decoration-succes="status=='accepted'" decoration-warning="status=='refused'" >
                                     <field name="price" />
-                                    <field name="status" />
+                                    <field name="status" invisible="1"/>
                                     <field name="partner_id" />
                                     <field name="date_deadline" />
                                     <field name="validity" />
