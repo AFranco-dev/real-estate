@@ -7,23 +7,14 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="description"/>
+                <field name="estate_property_type_id"/>
                 <field name="postcode"/>
-                <field name="date_availability"/>
-                <field name="expected_price"/>
-                <field name="selling_price"/>
+                <field name="property_tag_ids"/>
                 <field name="bedrooms"/>
                 <field name="living_area"/>
-                <field name="facades"/>
-                <field name="garage"/>
-                <field name="garden"/>
-                <field name="garden_area"/>
-                <field name="garden_orientation"/>
-                <field name="estate_property_type_id"/>
-                <field name="salesperson_id"/>
-                <field name="buyer_id"/>
-                <field name="property_tag_ids"/>
-                <field name="total_area" />
+                <field name="expected_price"/>
+                <field name="selling_price"/>
+                <field name="date_availability"/>
             </tree>
         </field>
     </record>
@@ -105,7 +96,7 @@
                         </page>
                         <page name="offers" string="Offers">
                             <field name="property_offer_ids" attrs="{'readonly': ['|','|',('state', '=', 'canceled'), ('state', '=', 'offer accepted'), ('state', '=', 'sold')]}" >
-                                <tree string="Offers Details">
+                                <tree string="Offers Details" editable="top">
                                     <field name="price" />
                                     <field name="status" />
                                     <field name="partner_id" />
