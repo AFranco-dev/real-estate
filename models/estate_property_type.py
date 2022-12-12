@@ -9,7 +9,11 @@ class EstatePropertyType(models.Model):
 
     name = fields.Char(string="Name", required=True)
     sequence = fields.Integer('Sequence', default=1)
+
     estate_property_ids = fields.One2many('estate.property', 'estate_property_type_id')
+    estate_property_offer_ids = fields.One2many('estate.property.offer', 'property_type_id')
+
+    best_offer = fields.Float(string="Best Offer", compute= lambda self: self.estate_property_offer_ids.len())
 
     _sql_constraints = [
         ('check_name_is_unique', 'unique(name)',
