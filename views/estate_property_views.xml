@@ -141,7 +141,8 @@
         <field name="name">estate.property.view.search</field>
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
-            <search string="">
+        <field name="context">{'search_default_available': True}</field>
+            <search string="Estate Properties Search List">
                 <field name="name" />
                 <field name="postcode"/>
                 <field name="expected_price"/>
