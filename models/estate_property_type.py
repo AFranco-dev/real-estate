@@ -13,7 +13,7 @@ class EstatePropertyType(models.Model):
     estate_property_ids = fields.One2many('estate.property', 'estate_property_type_id')
     estate_property_offer_ids = fields.One2many('estate.property.offer', 'property_type_id')
 
-    offers_quantity = fields.Float(string="Best Offer", compute= lambda self: self.estate_property_offer_ids.len())
+    offers_quantity = fields.Float(string="Best Offer", compute= lambda self: len(self.estate_property_offer_ids))
 
     _sql_constraints = [
         ('check_name_is_unique', 'unique(name)',
