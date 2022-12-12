@@ -104,7 +104,7 @@
                             </form>
                         </page>
                         <page name="offers" string="Offers">
-                            <field name="property_offer_ids">
+                            <field name="property_offer_ids" attrs="{'readonly': ['|','|',('state', '=', 'canceled'), ('state', '=', 'offer accepted'), ('state', '=', 'sold')]}" />>
                                 <tree string="Offers Details">
                                     <field name="price" />
                                     <field name="status" />
@@ -115,12 +115,12 @@
                                         name="accept_offer" 
                                         icon="fa-check"
                                         type="object"
-                                        attrs="{'invisible': [('status', '=', 'accepted')]}" />
+                                        attrs="{'invisible': [('status', '=', 'accepted'), ('status', '=', 'refused')]}" />
                                     <button 
                                         name="reject_offer" 
                                         icon="fa-times"
                                         type="object"
-                                        attrs="{'invisible': [('status', '=', 'refused')]}" />
+                                        attrs="{'invisible': [('status', '=', 'accepted'), ('status', '=', 'refused')]}" />
                                 </tree>
                                 <form>
                                     <group>
