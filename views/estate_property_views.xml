@@ -104,7 +104,7 @@
                             </form>
                         </page>
                         <page name="offers" string="Offers">
-                            <field name="property_offer_ids" attrs="{'readonly': ['|','|',('state', '=', 'canceled'), ('state', '=', 'offer accepted'), ('state', '=', 'sold')]}" />>
+                            <field name="property_offer_ids" attrs="{'readonly': ['|','|',('state', '=', 'canceled'), ('state', '=', 'offer accepted'), ('state', '=', 'sold')]}" >
                                 <tree string="Offers Details">
                                     <field name="price" />
                                     <field name="status" />
