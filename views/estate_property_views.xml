@@ -78,8 +78,12 @@
                                         <field name="facades"/>
                                         <field name="garage"/>
                                         <field name="garden"/>
-                                        <field name="garden_area" string="Garden Area (sqm)" />
-                                        <field name="garden_orientation"/>
+                                        <field 
+                                            name="garden_area" string="Garden Area (sqm)" 
+                                            attrs="{'invisible': ['garden', '=', False]}" />
+                                        <field 
+                                            name="garden_orientation" 
+                                            attrs="{'invisible': ['garden', '=', False]}" />
                                         <field name="total_area" />
                                         <field name="active" invisible="1"/>
                                     </group>
