@@ -11,6 +11,7 @@ class EstatePropertyOffer(models.Model):
     _columns={
         'create_date' : fields.Datetime('Creation Date', readonly=True)
     }
+    _order = "price desc"
 
     price = fields.Float(string="Amount", required=True)
     status = fields.Selection(

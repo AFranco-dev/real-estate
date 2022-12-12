@@ -5,6 +5,8 @@ class EstatePropertyType(models.Model):
     _name = 'estate.property.type'
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'Estate Property Type'
+    _order = "name"
+
 
     name = fields.Char(string="Name", required=True)
     estate_property_ids = fields.One2many('estate.property', 'estate_property_type_id')
