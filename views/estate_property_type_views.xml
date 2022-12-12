@@ -22,6 +22,18 @@
                         <h1>
                             <field name="name" />
                         </h1>
+                        <button name="%(estate_property_offer.estate_property_offer_action)d" 
+                                type="action"
+                                class="oe_stat_button" icon="fa-car" >
+                            <div class="o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="offers_quantity" />
+                                </span>
+                                <span class="o_stat_text">
+                                    Offers
+                                </span>
+                            </div>
+                        </button>
                     </div>
                     <field name="estate_property_ids">
                         <tree>
