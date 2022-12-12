@@ -5,7 +5,7 @@
         <field name="name">estate.property.view.tree</field>
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
-            <tree decoration-success="state==('offer recieved' or 'offer accepted')" decoration-bf="state=='offer accepted'" decoration-muted="state=='sold'" >
+            <tree decoration-success="state== 'offer recieved' or state== 'offer accepted'" decoration-bf="state=='offer accepted'" decoration-muted="state=='sold'" >
                 <field name="name"/>
                 <field name="estate_property_type_id"/>
                 <field name="state" invisible="1" />
