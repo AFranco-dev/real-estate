@@ -22,11 +22,6 @@
                         <h1>
                             <field name="name" />
                         </h1>
-                        <button 
-                            name="%(estate_property_offer.estate_property_offer_action)d"
-                            class="oe_stat_button" 
-                            string="OFFERS"
-                            type="action" /> 
                     </div>
                     <field name="estate_property_ids">
                         <tree>
