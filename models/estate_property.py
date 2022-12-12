@@ -91,8 +91,11 @@ class EstateProperty(models.Model):
             if not rec.property_offer_ids:
                 rec.best_offer = 0
                 rec.selling_price = 0
+                rec.state = "new"
             else:
                 rec.best_offer = max(offer.price for offer in rec.property_offer_ids)
+                if not rec.check_offer_accepted():
+                    rec.state = "offer recieved"
 
     @api.onchange('garden')
     def _onchange_garden(self):
