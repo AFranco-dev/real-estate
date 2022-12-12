@@ -24,6 +24,7 @@
                     </div>
                     <field name="estate_property_ids">
                         <tree>
+                            <field name="sequence" widget="handle" />
                             <field name="name"/>
                             <field name="expected_price"/>
                             <field name="state"/>
