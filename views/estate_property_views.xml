@@ -37,11 +37,13 @@
                     <button 
                         name="property_sold" 
                         string="SOLD" 
-                        type="object" /> 
+                        type="object"
+                        states="new,offer received,offer accepted" /> 
                     <button 
                         name="property_canceled" 
                         string="CANCEL"
-                        type="object" /> 
+                        type="object"
+                        states="new,offer received,offer accepted" /> 
                     <field 
                         name="state"
                         widget="statusbar"
