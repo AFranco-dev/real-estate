@@ -30,12 +30,12 @@
                         name="property_sold" 
                         string="SOLD" 
                         type="object"
-                        states="new,offer received,offer accepted" /> 
+                        states="new,offer recieved,offer accepted" /> 
                     <button 
                         name="property_canceled" 
                         string="CANCEL"
                         type="object"
-                        states="new,offer received,offer accepted" /> 
+                        states="new,offer recieved,offer accepted" /> 
                     <field 
                         name="state"
                         widget="statusbar"
