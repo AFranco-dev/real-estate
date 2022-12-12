@@ -23,7 +23,7 @@
                             <field name="name" />
                         </h1>
                         <button 
-                            name="%(estate_property.estate_property_offer_action)d"
+                            name="%(estate_property_offer.estate_property_offer_action)d"
                             class="oe_stat_button" 
                             string="OFFERS"
                             type="action" /> 
