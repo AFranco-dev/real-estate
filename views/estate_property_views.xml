@@ -55,7 +55,10 @@
                     </div>
                     <group>
                         <group>
-                            <field name="estate_property_type_id"/>
+                            <field name="estate_property_type_id" widget="many2one" 
+                                options="{
+                                    'can_create': False, 
+                                    'can_write' : False}" />
                             <field name="postcode"/>
                             <field name="date_availability"/>
                         </group>
@@ -91,7 +94,7 @@
                                     <group>
                                         <field name="salesperson_id"/>
                                         <field name="buyer_id"/>
-                                        <field name="property_tag_ids" widget="many2many_tags"/>
+                                        <field name="property_tag_ids" widget="many2many_tags" />
                                     </group>
                                     <group></group>
                                 </group>
