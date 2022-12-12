@@ -10,6 +10,9 @@
                 <field name="status"/>
                 <field name="partner_id"/>
                 <field name="property_id"/>
+                <field name="property_type_id">
+                    <field name="name" />
+                </field>
             </tree>
         </field>
     </record>
