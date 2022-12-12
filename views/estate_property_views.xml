@@ -114,11 +114,13 @@
                                     <button 
                                         name="accept_offer" 
                                         icon="fa-check"
-                                        type="object" />
+                                        type="object"
+                                        attrs="{'invisible': [('status', '=', 'accepted')]}" />
                                     <button 
                                         name="reject_offer" 
                                         icon="fa-times"
-                                        type="object" />
+                                        type="object"
+                                        attrs="{'invisible': [('status', '=', 'refused')]}" />
                                 </tree>
                                 <form>
                                     <group>
