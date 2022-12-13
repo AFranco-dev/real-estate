@@ -20,5 +20,6 @@ class EstatePropertyType(models.Model):
         'There is a property tag with that name already!')
     ]
 
+    @api.depends('estate_property_offer_ids')
     def _offers_count(self):
         return len(self.estate_property_offer_ids)
