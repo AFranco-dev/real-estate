@@ -23,7 +23,7 @@ class EstatePropertyOffer(models.Model):
 
     date_deadline = fields.Date(string="Offer Deadline", compute="_compute_deadline", inverse="_inverse_deadline")
 
-    property_id = fields.Many2one('estate.property', required=True)
+    property_id = fields.Many2one('estate.property', required=True, ondelete="cascade")
     property_type_id = fields.Many2one('estate.property.type', related='property_id.estate_property_type_id')
 
     _sql_constraints = [
