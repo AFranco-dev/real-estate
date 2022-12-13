@@ -18,24 +18,22 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <div>
-                        <span class="oe_title">
-                            <h1>
-                                <field name="name" />
-                            </h1>
-                        </span>
-                        <span class="oe_button_box" name="button_box">
-                            <button name="%(estate_property_offer_action)d" type="action" class="oe_stat_button" icon="fa-money">
-                                <span class="o_stat_info">
-                                    <span class="o_stat_value">
-                                        <field name="offers_quantity"/>
-                                    </span>
-                                    <span class="o_stat_text">
-                                        Offers
-                                    </span>
-                                </span>
-                            </button>
-                        </span>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(estate_property_offer_action)d" type="action" class="oe_stat_button" icon="fa-money">
+                            <div class="o_stat_info">
+                                <div class="o_stat_value">
+                                    <field name="offers_quantity"/>
+                                </div>
+                                <div class="o_stat_text">
+                                    Offers
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" />
+                        </h1>
                     </div>
                     <field name="estate_property_ids">
                         <tree>
