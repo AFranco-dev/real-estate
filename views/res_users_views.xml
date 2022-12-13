@@ -9,7 +9,18 @@
                 <xpath expr="//page[@name='security']" position="after">
                     <page string="Real Estate Properties" name="estate_properties">
                         <group>
-                            <field name="property_ids"/>
+                            <field name="property_ids">
+                                <tree>
+                                    <field string="Title" name="name" />
+                                    <field string="Property Type" name="estate_property_type_id" />
+                                    <field string="Postcode" name="postcode" />
+                                    <field string="Tags" name="property_tag_ids" />
+                                    <field string="Bedrooms" name="bedrooms" />
+                                    <field string="Living Area (sqm)" name="living_area" />
+                                    <field string="Expected Price" name="expected_price" />
+                                    <field string="Selling Price" name="selling_price" />
+                                </tree>
+                            </field>
                         </group>
                     </page>
                 </xpath>

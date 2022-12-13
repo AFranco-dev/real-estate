@@ -20,7 +20,7 @@ class EstateProperty(models.Model):
     expected_price = fields.Float(string='Expected Price')
     selling_price = fields.Float(string='Selling Price', required=True, copy=False)
     bedrooms = fields.Integer(string='# Of Bedrooms', default=3)
-    living_area = fields.Integer(string='# Of Living Areas')
+    living_area = fields.Integer(string='Living Areas (sqm)')
     facades = fields.Integer(string='# Of Facades')
     garage = fields.Boolean(string='Has Garage')
     garden = fields.Boolean(string='Has Garden')
