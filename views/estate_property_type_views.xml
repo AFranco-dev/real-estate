@@ -83,17 +83,15 @@
 
     <record id="estate_property__type_offer_tree_view" model="ir.ui.view">
         <field name="name">estate.property.type.offers.view.tree</field>
-        <field name="model">estate.property.type</field>
+        <field name="model">estate.property.type.estate_property_offer_ids</field>
         <field name="arch" type="xml">
-            <field name="estate_property_offer_ids">
-                <tree string="List of offers according to property type">
-                    <field name="price"/>
-                    <field name="status"/>
-                    <field name="partner_id"/>
-                    <field name="property_id"/>
-                    <field name="property_type_id" />
-                </tree>
-            </field>
+            <tree string="List of offers according to property type">
+                <field name="price"/>
+                <field name="status"/>
+                <field name="partner_id"/>
+                <field name="property_id"/>
+                <field name="property_type_id" />
+            </tree>
         </field>
     </record>
     
