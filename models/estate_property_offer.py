@@ -46,10 +46,10 @@ class EstatePropertyOffer(models.Model):
     @api.model
     def create(self, vals):
         for rec in 'property_id.property_offer_ids':
-            if vals.price <= rec.price:
+            if 'price' <= rec.price:
                 raise exceptions.UserError("Offer lower than the rest of offers!")
             else:
-                vals.property_id.state = 'offer recieved'
+                vals['property_id'].state = 'offer recieved'
                 return super(EstatePropertyOffer, self).create(vals)
 
     @api.depends('validity')
