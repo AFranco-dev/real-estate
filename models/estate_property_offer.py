@@ -45,12 +45,12 @@ class EstatePropertyOffer(models.Model):
 
     @api.model
     def create(self, vals):
-        for rec in self.env['estate.property'].browse(vals.get('property_id')).property_offer_ids:
+        property = self.env['estate.property'].browse(vals['property_id'])
+        for rec in property.property_offer_ids:
             if 'price' <= rec.price:
                 raise exceptions.UserError("Offer lower than the rest of offers!")
-            else:
-                vals['property_id'].state = 'offer recieved'
-                return super(EstatePropertyOffer, self).create(vals)
+        property.state = 'offer recieved'
+        return super(EstatePropertyOffer, self).create(vals)
 
     @api.depends('validity')
     def _compute_deadline(self):
