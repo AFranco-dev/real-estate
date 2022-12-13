@@ -111,3 +111,8 @@ class EstateProperty(models.Model):
                 if (offer.status == "accepted") and \
                     (float_utils.float_compare(offer.price, rec.expected_price*0.9, precision_rounding=0.01) == -1):
                     raise exceptions.ValidationError("The accepted offer price is lower than 90%!")
+    
+    @api.ondelete(at_uninstall=False)
+    def _unlink_if_new_or_canceled(self):
+        if any(((prop.state != 'new') or (prop.state != 'canceled')) for prop in self):
+            raise exceptions.UserError("Can't delete a property if it is not new or canceled!")
