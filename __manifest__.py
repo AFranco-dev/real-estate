@@ -9,6 +9,7 @@
     'depends': [
         'base',
         'mail',
+        'account',
     ],
     'data': [
         'security/ir.model.access.csv',
