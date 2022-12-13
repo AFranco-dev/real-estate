@@ -47,7 +47,7 @@ class EstatePropertyOffer(models.Model):
     def create(self, vals):
         property = self.env['estate.property'].browse(vals['property_id'])
         for rec in property.property_offer_ids:
-            if 'price' <= rec.price:
+            if float('price') <= rec.price:
                 raise exceptions.UserError("Offer lower than the rest of offers!")
         property.state = 'offer recieved'
         return super(EstatePropertyOffer, self).create(vals)
