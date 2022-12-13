@@ -87,11 +87,13 @@
         <field name="arch" type="xml">
             <tree string="List of offers according to property type">
                 <field name="estate_property_offer_ids">
-                    <field name="price"/>
-                    <field name="status"/>
-                    <field name="partner_id"/>
-                    <field name="property_id"/>
-                    <field name="property_type_id" />
+                    <tree>
+                        <field name="price"/>
+                        <field name="status"/>
+                        <field name="partner_id"/>
+                        <field name="property_id"/>
+                        <field name="property_type_id" />
+                    </tree>
                 </field>
             </tree>
         </field>
