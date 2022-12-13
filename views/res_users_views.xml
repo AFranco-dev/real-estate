@@ -10,7 +10,7 @@
                     <page string="Real Estate Properties" name="estate_properties">
                         <group>
                             <field name="property_ids">
-                                <tree>
+                                <tree string="Available Properties for Selling">
                                     <field string="Title" name="name" />
                                     <field string="Property Type" name="estate_property_type_id" />
                                     <field string="Postcode" name="postcode" />
