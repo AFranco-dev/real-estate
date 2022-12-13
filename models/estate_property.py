@@ -114,5 +114,5 @@ class EstateProperty(models.Model):
     
     @api.ondelete(at_uninstall=False)
     def _unlink_if_new_or_canceled(self):
-        if any(((prop.state != 'new') or (prop.state != 'canceled')) for prop in self):
+        if any(((prop.state == 'offer recieved') or (prop.state == 'offer accepted') or (prop.state == 'sold')) for prop in self):
             raise exceptions.UserError("Can't delete a property if it is not new or canceled!")
