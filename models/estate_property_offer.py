@@ -43,8 +43,8 @@ class EstatePropertyOffer(models.Model):
     def reject_offer(self):
         self.status = 'refused'
 
-    @api.model()
-    def create(EstatePropertyOffer, vals):
+    @api.model
+    def create(self, vals):
         for rec in vals.property_id.property_offer_ids:
             if vals.price <= rec.price:
                 raise exceptions.UserError("Offer lower than the rest of offers!")
