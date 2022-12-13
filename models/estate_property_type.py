@@ -23,6 +23,8 @@ class EstatePropertyType(models.Model):
     @api.depends('estate_property_offer_ids')
     def _offers_count(self):
         if self.estate_property_offer_ids:
-            return len(self.estate_property_offer_ids)
+            return 10
         else:
             return 0
+
+# len(self.estate_property_offer_ids)
