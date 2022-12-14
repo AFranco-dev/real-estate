@@ -43,13 +43,14 @@ class EstatePropertyOffer(models.Model):
     def reject_offer(self):
         self.status = 'refused'
 
-    @api.model
-    def create(self, vals):
-        property = self.env['estate.property'].browse(vals['property_id'])
-        for rec in property.property_offer_ids:
-            if float(vals['price']) <= rec.price:
-                raise exceptions.UserError("Offer lower than the rest of offers!")
-        property.state = 'offer recieved'
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            property = self.env['estate.property'].browse(vals['property_id'])
+            for rec in property.property_offer_ids:
+                if float(vals['price']) <= rec.price:
+                    raise exceptions.UserError("Offer lower than the rest of offers!")
+            property.state = 'offer recieved'
         return super(EstatePropertyOffer, self).create(vals)
 
     @api.depends('validity')
