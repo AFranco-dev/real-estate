@@ -63,6 +63,7 @@ class EstateProperty(models.Model):
     active = fields.Boolean(string='Active', default=True)
 
     def property_sold(self):
+        print("Overriden property sold. AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
         if self.state == "canceled":
             raise exceptions.UserError("The house is already canceled!")
         else:
