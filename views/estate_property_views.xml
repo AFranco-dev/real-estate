@@ -169,7 +169,7 @@
                                 Canceled
                             </div>
                             <div class="o_kanban_tags_section">
-                                <field name="property_tag_ids" />
+                                <field name="property_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" />
                             </div>
                         </div>
                     </t>
