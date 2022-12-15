@@ -142,10 +142,14 @@
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
             <kanban>
+                <field name="state" />
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click">
                             <field name="name"/>
+                        </div>
+                        <div t-if="record.state.raw_value == 'new'" decoration-success="True">
+                            This is new!
                         </div>
                     </t>
                 </templates>
