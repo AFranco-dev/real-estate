@@ -153,7 +153,7 @@
                                     </strong>
                                 </div>
                             </div>
-                            <div t-if="record.state.raw_value == 'new'" decoration-success="record.state.raw_value == 'new'">
+                            <div t-if="record.state.raw_value == 'new'" decoration-success="state == 'new'">
                                 This is new!
                             </div>
                             <div>
