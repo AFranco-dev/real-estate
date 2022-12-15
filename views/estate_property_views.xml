@@ -145,11 +145,15 @@
                 <field name="state" />
                 <templates>
                     <t t-name="kanban-box">
-                        <div class="oe_kanban_global_click">
-                            <div>
-                                <field name="name"/>
+                        <div class="oe_kanban_card oe_kanban_global_click oe_kanban_details">
+                            <div class="o_kanban_record_top mb-0">
+                                <div class="o_kanban_record_headings">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </strong>
+                                </div>
                             </div>
-                            <div t-if="record.state.raw_value == 'new'" decoration-success="True">
+                            <div t-if="record.state.raw_value == 'new'" decoration-success="record.state.raw_value == 'new'">
                                 This is new!
                             </div>
                             <div>
