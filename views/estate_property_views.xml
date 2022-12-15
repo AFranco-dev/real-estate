@@ -163,7 +163,7 @@
                                 Best Offer: $<field name="best_offer" />
                             </div>
                             <div t-if="record.state.raw_value == 'offer accepted' or record.state.raw_value == 'sold'" style="color:green">
-                                Best Offer: $<field name="best_offer" />
+                                Selling Price: $<field name="selling_price" />
                             </div>
                         </div>
                     </t>
