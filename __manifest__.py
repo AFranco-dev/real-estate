@@ -19,6 +19,8 @@
         'views/estate_property_offer_views.xml',
         'views/res_users_views.xml',
         'views/estate_menus.xml',
+        'report/estate_property_reports.xml',
+        'report/estate_property_reports_views.xml',
     ],
     'demo': [],
     'application': True,
