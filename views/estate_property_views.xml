@@ -168,6 +168,9 @@
                             <div t-if="record.state.raw_value == 'canceled'" style="color:red">
                                 Canceled
                             </div>
+                            <div class="o_kanban_tags_section">
+                                <field name="property_tag_ids" />
+                            </div>
                         </div>
                     </t>
                 </templates>
