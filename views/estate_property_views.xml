@@ -146,10 +146,15 @@
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click">
-                            <field name="name"/>
-                        </div>
-                        <div t-if="record.state.raw_value == 'new'" decoration-success="True">
-                            This is new!
+                            <div>
+                                <field name="name"/>
+                            </div>
+                            <div t-if="record.state.raw_value == 'new'" decoration-success="True">
+                                This is new!
+                            </div>
+                            <div>
+                                Expected Price: $<field name="expected_price" />
+                            </div>
                         </div>
                     </t>
                 </templates>
