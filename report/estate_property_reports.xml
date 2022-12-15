@@ -15,6 +15,32 @@
                         <div>
                             <strong>Status: </strong><span t-field='property.state' />
                         </div>
+                        <table class="table" t-if="property.property_offer_ids">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Partner</th>
+                                    <th scope="col">Validity</th>
+                                    <th scope="col">Deadline</th>
+                                    <th scope="col">State</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="index" t-value="1" />
+                                <t t-set="offers" t-value="property.mapped('offer_ids')" />
+                                <tr t-foreach="offers" t-as="offer">
+                                    <th scope="row"><span t-esc="index" /></th>
+                                    <td><span t-field='offer.price' /></td>
+                                    <td><span t-field='offer.partner_id.id' /></td>
+                                    <td><span t-field='offer.validity' /></td>
+                                    <td><span t-field='offer.date_deadline' /></td>
+                                    <td><span t-field='offer.status' /></td>
+                                <t t-set="index" t-value="index+1" />
+                                </tr>
+                            </tbody>
+                        </table>
+                        <strong t-else="">No offers received yet :(</strong>
                     </div>
                 </t>
             </t>
