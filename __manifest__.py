@@ -20,7 +20,8 @@
         'views/res_users_views.xml',
         'views/estate_menus.xml',
     ],
-    'demo': [],
+    'demo': [
+        'data/estate_demo.xml',],
     'application': True,
     'auto_install': False,
     'license': 'LGPL-3',
