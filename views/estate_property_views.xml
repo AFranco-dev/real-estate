@@ -153,11 +153,14 @@
                                     </strong>
                                 </div>
                             </div>
-                            <div t-if="record.state.raw_value == 'new'" decoration-success="state == 'new'">
-                                This is new!
-                            </div>
                             <div>
                                 Expected Price: $<field name="expected_price" />
+                            </div>
+                            <div t-if="record.state.raw_value == 'new'" style="color:green">
+                                This is new!
+                            </div>
+                            <div t-if="record.state.raw_value == 'offer recieved'" style="color:green">
+                                Best Offer: $<field name="best_offer" />
                             </div>
                         </div>
                     </t>
