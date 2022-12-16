@@ -28,7 +28,7 @@
                             </thead>
                             <tbody>
                                 <t t-set="index" t-value="1" />
-                                <t t-set="offers" t-value="property.mapped('offer_ids')" />
+                                <t t-set="offers" t-value="property.mapped('property_offer_ids')" />
                                 <tr t-foreach="offers" t-as="offer">
                                     <th scope="row"><span t-esc="index" /></th>
                                     <td><span t-field='offer.price' /></td>
